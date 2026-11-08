@@ -1,0 +1,23 @@
+# Lab 1, variant 3. Board DE1, FPGA Cyclone II EP2C20F484C7
+set_global_assignment -name FAMILY "Cyclone II"
+set_global_assignment -name DEVICE EP2C20F484C7
+set_global_assignment -name TOP_LEVEL_ENTITY lab1_v3
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
+
+# Source files
+set_global_assignment -name BDF_FILE lab1_v3.bdf
+set_global_assignment -name VERILOG_FILE johnson4.v
+set_global_assignment -name VERILOG_FILE rsp.v
+set_global_assignment -name SDC_FILE lab1_v3.sdc
+
+# Pin assignments (DE1 User Manual, tables 4.2 and 4.4)
+# C -> KEY[3]
+set_location_assignment PIN_T21 -to C
+# Y[0] -> LEDG[1], Y[1] -> LEDG[2], Y[2] -> LEDG[3]
+set_location_assignment PIN_U21 -to Y[0]
+set_location_assignment PIN_V22 -to Y[1]
+set_location_assignment PIN_V21 -to Y[2]

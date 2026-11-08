@@ -1,0 +1,101 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Lab 1, variant 3: Johnson counter + signal distributor (DE1, EP2C20F484C7)
+Author: Boroda D.A., M3O-407B-23
+*/
+(header "graphic" (version "1.4"))
+(pin
+	(input)
+	(rect 40 120 208 136)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "C" (rect 5 0 13 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(output)
+	(rect 600 120 776 136)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "Y[2..0]" (rect 90 0 123 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(symbol
+	(rect 240 96 368 176)
+	(text "johnson4" (rect 5 0 52 12)(font "Arial" ))
+	(text "b2v_inst" (rect 8 64 49 76)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "C" (rect 0 0 8 12)(font "Arial" ))
+		(text "C" (rect 21 27 29 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 128 32)
+		(output)
+		(text "Q[3..0]" (rect 0 0 35 12)(font "Arial" ))
+		(text "Q[3..0]" (rect 72 27 107 39)(font "Arial" ))
+		(line (pt 128 32)(pt 112 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 112 64)(line_width 1))
+	)
+)
+(symbol
+	(rect 400 96 528 176)
+	(text "rsp" (rect 5 0 20 12)(font "Arial" ))
+	(text "b2v_inst1" (rect 8 64 54 76)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "Q[3..0]" (rect 0 0 35 12)(font "Arial" ))
+		(text "Q[3..0]" (rect 21 27 56 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 128 32)
+		(output)
+		(text "Y[2..0]" (rect 0 0 33 12)(font "Arial" ))
+		(text "Y[2..0]" (rect 74 27 107 39)(font "Arial" ))
+		(line (pt 128 32)(pt 112 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 112 64)(line_width 1))
+	)
+)
+(connector
+	(pt 208 128)
+	(pt 240 128)
+)
+(connector
+	(text "Q[3..0]" (rect 372 112 407 124)(font "Arial" ))
+	(pt 368 128)
+	(pt 400 128)
+	(bus)
+)
+(connector
+	(pt 528 128)
+	(pt 600 128)
+	(bus)
+)

@@ -1,0 +1,12 @@
+# служебные файлы Quartus — в репозиторий не добавляются
+db/
+incremental_db/
+output_files/
+simulation/
+*.qws
+*.bak
+*.bsf
+*.qdf
+# результаты моделирования
+sim/*.vvp
+sim/*.vcd
