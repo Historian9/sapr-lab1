@@ -13,6 +13,11 @@ class TestCalc(unittest.TestCase):
         with self.assertRaises(ValueError):
             calc.fact(-1)
 
+    def test_fib(self):
+        self.assertEqual(calc.fib(0), 0)
+        self.assertEqual(calc.fib(1), 1)
+        self.assertEqual(calc.fib(10), 55)
+
     def test_gcd(self):
         self.assertEqual(calc.gcd(12, 18), 6)
         self.assertEqual(calc.gcd(17, 5), 1)
