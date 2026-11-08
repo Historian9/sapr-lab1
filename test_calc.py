@@ -13,6 +13,11 @@ class TestCalc(unittest.TestCase):
         with self.assertRaises(ValueError):
             calc.fact(-1)
 
+    def test_gcd(self):
+        self.assertEqual(calc.gcd(12, 18), 6)
+        self.assertEqual(calc.gcd(17, 5), 1)
+        self.assertEqual(calc.gcd(0, 7), 7)
+
 
 if __name__ == "__main__":
     unittest.main()

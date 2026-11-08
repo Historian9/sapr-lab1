@@ -9,10 +9,12 @@
 
 Поддерживаемые операции:
 - `fact N` — факториал числа N
+- `gcd A B` — наибольший общий делитель чисел A и B
 
 ## Запуск
 
 ```
 python3 calc.py fact 5      # 120
+python3 calc.py gcd 12 18   # 6
 python3 -m unittest -v      # автотесты
 ```
