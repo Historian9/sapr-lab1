@@ -12,8 +12,19 @@ def fact(n: int) -> int:
     return result
 
 
+def fib(n: int) -> int:
+    """n-е число Фибоначчи (fib(0)=0, fib(1)=1)."""
+    if n < 0:
+        raise ValueError("n должно быть >= 0")
+    a, b = 0, 1
+    for _ in range(n):
+        a, b = b, a + b
+    return a
+
+
 OPERATIONS = {
     "fact": fact,
+    "fib": fib,
 }
 
 
