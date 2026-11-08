@@ -22,18 +22,27 @@ def fib(n: int) -> int:
     return a
 
 
+def gcd(a: int, b: int) -> int:
+    """Наибольший общий делитель (алгоритм Евклида)."""
+    a, b = abs(a), abs(b)
+    while b:
+        a, b = b, a % b
+    return a
+
+
 OPERATIONS = {
     "fact": fact,
     "fib": fib,
+    "gcd": gcd,
 }
 
 
 def main(argv):
-    if len(argv) != 3 or argv[1] not in OPERATIONS:
-        print("Использование: python3 calc.py <операция> <N>")
+    if len(argv) < 3 or argv[1] not in OPERATIONS:
+        print("Использование: python3 calc.py <операция> <аргументы...>")
         print("Операции:", ", ".join(OPERATIONS))
         return 1
-    print(OPERATIONS[argv[1]](int(argv[2])))
+    print(OPERATIONS[argv[1]](*map(int, argv[2:])))
     return 0
 
 
